@@ -21,6 +21,7 @@ body{
     color: #ae872f;
     transform: translate(-50%, -50%);
     text-shadow: 0 3px 3px rgb(68, 58, 0);
+    font-family: 'Public Sans', sans-serif;
     font-size: 3rem;
     background: none;
 }
@@ -53,17 +54,17 @@ body{
                 color: #7e6221; 
                 font-size: 20px; 
                 font-family: 'Public Sans', sans-serif;}
-/*.text-area:focus {
+
+.textoIngresado:focus {
     outline: none;
-    border: none;
-    box-shadow: #7e6221;
-  }*/
+    background: rgba(70, 57, 17, 0.1);
+  }
 
 .llave{
     width: 100%;
     margin-bottom: 1rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .botones{
@@ -74,16 +75,22 @@ body{
 }
 
 .resultado{
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .textoEntregado{
+    width: 100%;
     margin-bottom: 10px;
     border: none;
     border-radius: 10px;
     background: rgba(174,135,47, .01);
     padding: 1rem;
+}
+
+.textoEntregado:focus{
+    outline: none;
+    background: rgba(70, 57, 17, 0.1);
 }
