@@ -32,6 +32,15 @@ body{
     align-items: center;
 }
 
+.ingresar{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
 .textoIngresado{
     width: 100%;
     margin-top: 2rem;
@@ -39,20 +48,26 @@ body{
     border: none;
     border-radius: 10px;
     background: rgba(174,135,47, .01);
+    padding: 1rem;
 }::placeholder { 
                 color: #7e6221; 
                 font-size: 20px; 
                 font-family: 'Public Sans', sans-serif;}
-.text-area:focus {
+/*.text-area:focus {
     outline: none;
-  }
+    border: none;
+    box-shadow: #7e6221;
+  }*/
 
 .llave{
+    width: 100%;
     margin-bottom: 1rem;
     display: flex;
+    justify-content: space-around;
 }
 
 .botones{
+    width: 100%;
     margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
@@ -70,4 +85,5 @@ body{
     border: none;
     border-radius: 10px;
     background: rgba(174,135,47, .01);
+    padding: 1rem;
 }
