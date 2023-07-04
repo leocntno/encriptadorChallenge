@@ -1,3 +1,7 @@
+body{
+    background: rgba(174,135,47, .15);
+}
+
 .banner {
     width: 100%;
     position: relative;
@@ -16,9 +20,9 @@
     left: 50%;
     color: #ae872f;
     transform: translate(-50%, -50%);
-    font-family: 'Public Sans', sans-serif;
     text-shadow: 0 3px 3px rgb(68, 58, 0);
     font-size: 3rem;
+    background: none;
 }
 
 .container{
@@ -28,6 +32,42 @@
     align-items: center;
 }
 
-.textArea{
+.textoIngresado{
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(174,135,47, .01);
+}::placeholder { 
+                color: #7e6221; 
+                font-size: 20px; 
+                font-family: 'Public Sans', sans-serif;}
+.text-area:focus {
+    outline: none;
+  }
 
+.llave{
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.botones{
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.resultado{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textoEntregado{
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(174,135,47, .01);
 }
