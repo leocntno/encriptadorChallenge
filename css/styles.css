@@ -4,12 +4,12 @@
     text-align: center;
 }
 
-.banner__img{
+.bannerImg{
     height: 200px;
     width: 100%;
 }
 
-.banner__titulo{
+.bannerTitulo{
     width: 100%;
     position: absolute;
     top: 50%;
@@ -19,4 +19,15 @@
     font-family: 'Public Sans', sans-serif;
     text-shadow: 0 3px 3px rgb(68, 58, 0);
     font-size: 3rem;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textArea{
+
 }

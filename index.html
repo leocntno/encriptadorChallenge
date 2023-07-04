@@ -12,11 +12,27 @@
 </head>
 <body>
     <header class="banner">
-        <img src="img/el-codigo-enigma-review-banner.jpg" class="banner__img">
-        <h1 class="banner__titulo">ENIGMA</h1>
+        <img src="img/el-codigo-enigma-review-banner.jpg" class="bannerImg">
+        <h1 class="bannerTitulo">ENIGMA</h1>
     </header>
-    <main>
-
+    <main class="container">
+        <section>
+            <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
+            <div class="llave">
+                <input type="password" class="llaveCasilla">
+                <button class="llaveCopiar">Obtener llave</button>
+            </div>
+            <div class="botones">
+                <button class="btnEncriptar">Encriptar</button>
+                <button class="btnDesencriptar">Desencriptar</button>
+            </div>
+        </section>
+        <section>
+            <textarea class="mensaje" cols="20" rows="10"></textarea>
+            <div>
+                <button class="copiar">Copiar</button>
+            </div>
+        </section>
     </main>
     <script src="script.js"></script>
 </body>
