@@ -52,7 +52,7 @@ body{
     padding: 1rem;
 }::placeholder { 
                 color: #7e6221; 
-                font-size: 30px; 
+                font-size: 25px; 
                 font-family: 'Public Sans', sans-serif;}
 
 .textoIngresado:focus {
@@ -150,7 +150,7 @@ body{
     margin-bottom: 10px;
     border: none;
     border-radius: 10px;
-    background: rgba(174,135,47, .01);
+    background: white;
     padding: 1rem;
 }
 
