@@ -1,5 +1,5 @@
 body{
-    background: rgba(174,135,47, .15);
+    background: rgba(174,135,47, .30);
 }
 
 .banner {
@@ -20,9 +20,9 @@ body{
     left: 50%;
     color: #ae872f;
     transform: translate(-50%, -50%);
-    text-shadow: 0 3px 3px rgb(68, 58, 0);
+    text-shadow: 0 4px 4px rgb(148, 134, 58);
     font-family: 'Public Sans', sans-serif;
-    font-size: 3rem;
+    font-size: 4rem;
     background: none;
 }
 
@@ -52,7 +52,7 @@ body{
     padding: 1rem;
 }::placeholder { 
                 color: #7e6221; 
-                font-size: 20px; 
+                font-size: 30px; 
                 font-family: 'Public Sans', sans-serif;}
 
 .textoIngresado:focus {
@@ -62,9 +62,46 @@ body{
 
 .llave{
     width: 100%;
-    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
+}
+
+.llaveCasilla{
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid #7e6221;
+    margin-right: 1rem;
+}
+.llaveCasilla:focus{
+    outline: none;
+}
+
+.llaveCopiar{
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #7e6221;
+    cursor: pointer;
+    width: 120px;
+}
+
+.llaveCopiar:hover{
+    background-color: #b4a383;
+}
+
+.admiracion{
+    width: 17px;
+    height: 17px;
+}
+
+.info{
+    width: 100%;
+    display: flex;
+    text-align: left;
+    margin-left: 1rem;
+    margin-top: 5px;
+    margin-bottom: 1rem;
+    color: #7e6221;
 }
 
 .botones{
@@ -72,6 +109,33 @@ body{
     margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
+}
+
+.btnEncriptar{
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #611e09;
+    border: 1px solid #611e09;
+    cursor: pointer;
+    width: 140px;
+    color: white;
+}
+
+.btnEncriptar:hover{
+    background-color: #832d13;
+    animation-delay: 1ms;
+}
+
+.btnDesencriptar{
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #7e6221;
+    cursor: pointer;
+    width: 140px;
+}
+
+.btnDesencriptar:hover{
+    background-color: #b4a383;
 }
 
 .resultado{
@@ -93,4 +157,19 @@ body{
 .textoEntregado:focus{
     outline: none;
     background: rgba(70, 57, 17, 0.1);
+}
+
+.copiar{
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: #611e09;
+    border: 1px solid #611e09;
+    cursor: pointer;
+    width: 140px;
+    color: white;
+}
+
+.copiar:hover {
+    background-color: #832d13;
 }
