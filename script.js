@@ -11,20 +11,6 @@ const caracteresReemplazo = Object.values(encriptador);
 console.log(caracteresReemplazo);
 const llave = caracteresReemplazo.join("");
 var llaveDesencriptar = '';
-
-
-  /*function generarDiccionarioEncriptado() {
-    var letrasOriginales = "abcdefghijklmnopqrstuvwxyz";
-    var letrasEncriptadas = letrasOriginales.split("");
-    shuffleArray(letrasEncriptadas);
-  
-    var diccionarioEncriptado = {};
-    for (var i = 0; i < letrasOriginales.length; i++) {
-      diccionarioEncriptado[letrasOriginales[i]] = letrasEncriptadas[i];
-    }
-  
-    return diccionarioEncriptado;
-  }*/
   
   function generarEncriptador() {
     const letras = 'abcdefghijklmnopqrstuvwxyz';
