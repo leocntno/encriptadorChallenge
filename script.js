@@ -1,11 +1,19 @@
 const textArea = document.querySelector(".textoIngresado");
+const resultado = document.querySelector(".textoEntregado");
+const copia = document.querySelector(".copiar");
+const llaveCasilla = document.querySelector(".llaveCasilla");
+var textoLlave= '';
+const encriptador = generarEncriptador();
+console.log(encriptador);
+var textoIngresado = '';
+var textoEncriptar = '';
+const caracteresReemplazo = Object.values(encriptador);
+console.log(caracteresReemplazo);
+const llave = caracteresReemplazo.join("");
+var llaveDesencriptar = '';
 
-function btnEncriptar(){
-    let textoEscrito = document.querySelector(".textoIngresado").value;
-    console.log(textoEscrito);
-}
 
-function generarDiccionarioEncriptado() {
+  /*function generarDiccionarioEncriptado() {
     var letrasOriginales = "abcdefghijklmnopqrstuvwxyz";
     var letrasEncriptadas = letrasOriginales.split("");
     shuffleArray(letrasEncriptadas);
@@ -16,7 +24,7 @@ function generarDiccionarioEncriptado() {
     }
   
     return diccionarioEncriptado;
-  }
+  }*/
   
   function generarEncriptador() {
     const letras = 'abcdefghijklmnopqrstuvwxyz';
@@ -28,6 +36,14 @@ function generarDiccionarioEncriptado() {
     }
   
     return encriptador;
+  }
+
+  function btnEncriptar(){
+        textoIngresado = textArea.value;
+        const textoEncriptado = encriptarTexto(textoIngresado, encriptador);
+        resultado.value = textoEncriptado;
+        guardarArchivoDeTexto(llave, "llave.txt");
+        textArea.value = "";
   }
   
   function encriptarTexto(texto, encriptador) {
@@ -42,30 +58,23 @@ function generarDiccionarioEncriptado() {
     }
     return textoEncriptado;
   }
-  
-  // Generar el encriptador y obtener el texto encriptado
-  const encriptador = generarEncriptador();
-  const textoOriginal = 'Hola mundo!';
-  const textoEncriptado = encriptarTexto(textoOriginal, encriptador);
-  
-  // Obtener el arreglo de caracteres de reemplazo
-  const caracteresReemplazo = Object.values(encriptador);
-  const llave = caracteresReemplazo.join("");
-  console.log(llave)
 
-  const llaveDesencriptar = llave.split("");
-  
-  // Imprimir el arreglo y el texto encriptado
-  console.log('Arreglo de caracteres de reemplazo:', llaveDesencriptar);
-  console.log('Texto encriptado:', textoEncriptado);
-  console.log('Texto original:', textoOriginal);
+  const guardarArchivoDeTexto = (contenido, nombre) => {
+    const a = document.createElement("a");
+    const archivo = new Blob([contenido], { type: 'text/plain' });
+    const url = URL.createObjectURL(archivo);
+    a.href = url;
+    a.download = nombre;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
 
-
-  function desencriptarTexto(textoEncriptado, caracteresReemplazo) {
+  function desencriptarTexto(textoEncriptado, llaveDesencriptar) {
     let textoDesencriptado = '';
     for (let i = 0; i < textoEncriptado.length; i++) {
       const caracter = textoEncriptado.charAt(i).toLowerCase();
-      const indice = caracteresReemplazo.indexOf(caracter);
+      const indice = llaveDesencriptar.indexOf(caracter);
+      console.log(indice)
       if (indice !== -1) {
         textoDesencriptado += String.fromCharCode(indice + 97);
       } else {
@@ -74,10 +83,18 @@ function generarDiccionarioEncriptado() {
     }
     return textoDesencriptado;
   }
+
+  function btnDesencriptar(){
+    textoEncriptar = textArea.value;
+    const textoDesencriptado = desencriptarTexto(textoEncriptar, llaveDesencriptar)
+    console.log(textoDesencriptado);
+    resultado.value = textoDesencriptado;
+    textArea.value = "";
+    textoLlave = llaveCasilla.value;
+    llaveDesencriptar = textoLlave.split('');
+    console.log(textoLlave);
+    console.log(llaveDesencriptar);
+  }
   
-  // Utilizar el arreglo de caracteres de reemplazo y el texto encriptado para desencriptar
-  const textoDesencriptado = desencriptarTexto(textoEncriptado, caracteresReemplazo);
-  
-  // Imprimir el texto desencriptado
-  console.log('Texto desencriptado:', textoDesencriptado);
+ 
   
