@@ -1,26 +1,83 @@
-const abecedario = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n',
-'ñ','o','p','q','r','s','t','u','v','w','x','y','z'];
+const textArea = document.querySelector(".textoIngresado");
 
-let abcCambia = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n',
-    'ñ','o','p','q','r','s','t','u','v','w','x','y','z'];
+function btnEncriptar(){
+    let textoEscrito = document.querySelector(".textoIngresado").value;
+    console.log(textoEscrito);
+}
 
-const llave = abcCambia.sort(() => Math.random() - 0.5);
+function generarDiccionarioEncriptado() {
+    var letrasOriginales = "abcdefghijklmnopqrstuvwxyz";
+    var letrasEncriptadas = letrasOriginales.split("");
+    shuffleArray(letrasEncriptadas);
+  
+    var diccionarioEncriptado = {};
+    for (var i = 0; i < letrasOriginales.length; i++) {
+      diccionarioEncriptado[letrasOriginales[i]] = letrasEncriptadas[i];
+    }
+  
+    return diccionarioEncriptado;
+  }
+  
+  function generarEncriptador() {
+    const letras = 'abcdefghijklmnopqrstuvwxyz';
+    const letrasAleatorias = letras.split('').sort(() => Math.random() - 0.5);
+  
+    const encriptador = {};
+    for (let i = 0; i < letras.length; i++) {
+      encriptador[letras.charAt(i)] = letrasAleatorias[i];
+    }
+  
+    return encriptador;
+  }
+  
+  function encriptarTexto(texto, encriptador) {
+    let textoEncriptado = '';
+    for (let i = 0; i < texto.length; i++) {
+      const caracter = texto.charAt(i).toLowerCase();
+      if (encriptador.hasOwnProperty(caracter)) {
+        textoEncriptado += encriptador[caracter];
+      } else {
+        textoEncriptado += caracter;
+      }
+    }
+    return textoEncriptado;
+  }
+  
+  // Generar el encriptador y obtener el texto encriptado
+  const encriptador = generarEncriptador();
+  const textoOriginal = 'Hola mundo!';
+  const textoEncriptado = encriptarTexto(textoOriginal, encriptador);
+  
+  // Obtener el arreglo de caracteres de reemplazo
+  const caracteresReemplazo = Object.values(encriptador);
+  const llave = caracteresReemplazo.join("");
+  console.log(llave)
+
+  const llaveDesencriptar = llave.split("");
+  
+  // Imprimir el arreglo y el texto encriptado
+  console.log('Arreglo de caracteres de reemplazo:', llaveDesencriptar);
+  console.log('Texto encriptado:', textoEncriptado);
+  console.log('Texto original:', textoOriginal);
 
 
-let encriptacion = abecedario.concat(llave);
-console.log(encriptacion);
-
-const textoEncriptar = "hola"
-var textCar = String(textoEncriptar);
-
-       for (i = 0; i < textCar.length ; i++){
-            var indices = [];
-            var idx = encriptacion.indexOf(textCar[i]);
-            while (idx != -1) {
-                indices.push(idx);
-            idx = encriptacion.indexOf(textCar[i], idx + 1);
-            }
-            console.log(indices);
-    
-} 
-
+  function desencriptarTexto(textoEncriptado, caracteresReemplazo) {
+    let textoDesencriptado = '';
+    for (let i = 0; i < textoEncriptado.length; i++) {
+      const caracter = textoEncriptado.charAt(i).toLowerCase();
+      const indice = caracteresReemplazo.indexOf(caracter);
+      if (indice !== -1) {
+        textoDesencriptado += String.fromCharCode(indice + 97);
+      } else {
+        textoDesencriptado += caracter;
+      }
+    }
+    return textoDesencriptado;
+  }
+  
+  // Utilizar el arreglo de caracteres de reemplazo y el texto encriptado para desencriptar
+  const textoDesencriptado = desencriptarTexto(textoEncriptado, caracteresReemplazo);
+  
+  // Imprimir el texto desencriptado
+  console.log('Texto desencriptado:', textoDesencriptado);
+  
