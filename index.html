@@ -19,11 +19,8 @@
         <section class="ingresar">
             <textarea class="textoIngresado" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
             <div class="llave">
-                <input type="password" class="llaveCasilla">
-            </div>
-            <div class="info">
-                <h6><img class="admiracion" src = "/img/exclamation.svg" alt="admiracion"/>
-                    Ingresa o copia la llave</h6>
+                <img class="admiracion" src = "/img/exclamation.svg" alt="admiracion"/>
+                <input type="password" class="llaveCasilla" placeholder="Ingresa o copia la llave">
             </div>
             <div class="botones">
                 <button class="btnEncriptar" onclick="btnEncriptar()">Encriptar</button>
@@ -34,7 +31,7 @@
             <textarea class="textoEntregado" cols="30" rows="10"></textarea>
             <div class="botonesFinales">
                 <button class="copiar">Copiar</button>
-                <button class="obtener">Obtener llave</button>
+                <button class="obtener" onclick="guardarLlave()">Obtener llave</button>
             </div>
         </section>
     </main>

@@ -1,5 +1,6 @@
 const textArea = document.querySelector(".textoIngresado");
 const resultado = document.querySelector(".textoEntregado");
+const areaResultado = document.querySelector(".resultado");
 const copia = document.querySelector(".copiar");
 
 const encriptador = generarEncriptador();
@@ -27,8 +28,8 @@ var textoEncriptar = '';
         textoIngresado = textArea.value;
         const textoEncriptado = encriptarTexto(textoIngresado, encriptador);
         resultado.value = textoEncriptado;
-        guardarArchivoDeTexto(llave, "llave.txt");
         textArea.value = "";
+        areaResultado.style.display = "flex"
   }
   
   function encriptarTexto(texto, encriptador) {
@@ -42,6 +43,10 @@ var textoEncriptar = '';
       }
     }
     return textoEncriptado;
+  }
+
+  function guardarLlave(){
+    guardarArchivoDeTexto("Guarda correctamente el contenido de este archivo: "+llave, "llave.txt");
   }
 
   const guardarArchivoDeTexto = (contenido, nombre) => {
