@@ -70,20 +70,16 @@ var textoEncriptar = '';
   }
 
   function btnDesencriptar(){
+
     const llaveCasilla = document.querySelector(".llaveCasilla");
     const textoLlave = llaveCasilla.value;
     var llaveDesencriptar = textoLlave.split('');
 
-    console.log(llaveCasilla);
-
-
     textoResuelto = textArea.value;
     const textoDesencriptado = desencriptarTexto(textoResuelto, llaveDesencriptar);
-    console.log(llaveDesencriptar);
-    console.log(textoLlave);
     resultado.value = textoDesencriptado;
     textArea.value = "";
-    
+  
   }
   
  
