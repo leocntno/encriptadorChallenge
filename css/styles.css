@@ -64,10 +64,10 @@ body{
 .llave{
     width: 100%;
     display: flex;
-    justify-content: space-between;
 }
 
 .llaveCasilla{
+    width: 100%;
     border: none;
     border-radius: 20px;
     padding: 10px;
@@ -76,18 +76,6 @@ body{
 }
 .llaveCasilla:focus{
     outline: none;
-}
-
-.llaveCopiar{
-    padding: 10px;
-    border-radius: 20px;
-    border: 1px solid #7e6221;
-    cursor: pointer;
-    width: 120px;
-}
-
-.llaveCopiar:hover{
-    background-color: #b4a383;
 }
 
 .admiracion{
@@ -99,14 +87,14 @@ body{
     width: 100%;
     display: flex;
     text-align: left;
-    margin-left: 1rem;
-    margin-top: 5px;
+    margin-left: 4rem;
+    margin-top: 10px;
     margin-bottom: 1rem;
     color: #7e6221;
 }
 
 .botones{
-    width: 100%;
+    width: 110%;
     margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
@@ -160,6 +148,13 @@ body{
     background: rgba(70, 57, 17, 0.1);
 }
 
+.botonesFinales{
+    width: 110%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
 .copiar{
     padding: 10px;
     margin-bottom: 20px;
@@ -173,4 +168,28 @@ body{
 
 .copiar:hover {
     background-color: #832d13;
+}
+
+.obtener {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: #611e09;
+    border: 1px solid #7e6221;
+    cursor: pointer;
+    width: 140px;
+    color: white;
+}
+
+
+.llaveCopiar{
+    padding: 10px;
+    border-radius: 20px;
+    
+    cursor: pointer;
+    width: 140px;
+}
+
+.obtener:hover{
+    background-color: #b4a383;
 }
