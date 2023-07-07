@@ -1,16 +1,14 @@
 const textArea = document.querySelector(".textoIngresado");
 const resultado = document.querySelector(".textoEntregado");
 const copia = document.querySelector(".copiar");
-const llaveCasilla = document.querySelector(".llaveCasilla");
-var textoLlave= '';
+
 const encriptador = generarEncriptador();
-console.log(encriptador);
+const caracteresReemplazo = Object.values(encriptador);
+var llave = caracteresReemplazo.join("");
+
 var textoIngresado = '';
 var textoEncriptar = '';
-const caracteresReemplazo = Object.values(encriptador);
-console.log(caracteresReemplazo);
-const llave = caracteresReemplazo.join("");
-var llaveDesencriptar = '';
+
   
   function generarEncriptador() {
     const letras = 'abcdefghijklmnopqrstuvwxyz';
@@ -23,6 +21,7 @@ var llaveDesencriptar = '';
   
     return encriptador;
   }
+
 
   function btnEncriptar(){
         textoIngresado = textArea.value;
@@ -55,10 +54,10 @@ var llaveDesencriptar = '';
     URL.revokeObjectURL(url);
   }
 
-  function desencriptarTexto(textoEncriptado, llaveDesencriptar) {
+  function desencriptarTexto(textoResolver, llaveDesencriptar) {
     let textoDesencriptado = '';
-    for (let i = 0; i < textoEncriptado.length; i++) {
-      const caracter = textoEncriptado.charAt(i).toLowerCase();
+    for (let i = 0; i < textoResolver.length; i++) {
+      const caracter = textoResolver.charAt(i).toLowerCase();
       const indice = llaveDesencriptar.indexOf(caracter);
       console.log(indice)
       if (indice !== -1) {
@@ -71,15 +70,20 @@ var llaveDesencriptar = '';
   }
 
   function btnDesencriptar(){
-    textoEncriptar = textArea.value;
-    const textoDesencriptado = desencriptarTexto(textoEncriptar, llaveDesencriptar)
-    console.log(textoDesencriptado);
+    const llaveCasilla = document.querySelector(".llaveCasilla");
+    const textoLlave = llaveCasilla.value;
+    var llaveDesencriptar = textoLlave.split('');
+
+    console.log(llaveCasilla);
+
+
+    textoResuelto = textArea.value;
+    const textoDesencriptado = desencriptarTexto(textoResuelto, llaveDesencriptar);
+    console.log(llaveDesencriptar);
+    console.log(textoLlave);
     resultado.value = textoDesencriptado;
     textArea.value = "";
-    textoLlave = llaveCasilla.value;
-    llaveDesencriptar = textoLlave.split('');
-    console.log(textoLlave);
-    console.log(llaveDesencriptar);
+    
   }
   
  
