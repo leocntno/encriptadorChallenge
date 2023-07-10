@@ -209,7 +209,6 @@ body{
     color: white;
 }
 
-
 .llaveCopiar{
     padding: 10px;
     border-radius: 20px;    
@@ -219,4 +218,29 @@ body{
 
 .obtener:hover{
     background-color: #b4a383;
+}
+
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgb(46, 6, 6);
+
+    padding-bottom: 3rem;
+    
+}
+
+.footerSocial {
+    display: flex;
+}
+
+.footerMedia {
+    display: block;
+
+    width: 30px;
+    height: 30px;
+
+    margin: 5rem 1.5rem;
 }
