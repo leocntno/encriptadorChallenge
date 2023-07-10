@@ -26,11 +26,14 @@
                 <button class="btnEncriptar" onclick="btnEncriptar()">Encriptar</button>
                 <button class="btnDesencriptar" onclick="btnDesencriptar()">Desencriptar</button>
             </div>
+            <div class="mostrar">
+                <button id="btnMostrarOcultar" onclick="mostrarOcultar()">▼</button>
+            </div>
         </section>
         <section class="resultado">
             <textarea class="textoEntregado" cols="30" rows="10"></textarea>
             <div class="botonesFinales">
-                <button class="copiar">Copiar</button>
+                <button class="copiar" onclick="copiar()">Copiar</button>
                 <button class="obtener" onclick="guardarLlave()">Obtener llave</button>
             </div>
         </section>

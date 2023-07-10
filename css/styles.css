@@ -101,7 +101,7 @@ body{
 .botones{
     width: 110%;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
 }
@@ -133,6 +133,27 @@ body{
     background-color: #b4a383;
 }
 
+.mostrar{
+    display: flex;
+    align-items: center;
+}
+
+#btnMostrarOcultar{
+    background: rgba(174,135,47, .30);
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: black;
+    cursor: pointer;
+    width: 100px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+#btnMostrarOcultar:hover{
+    transform: scale(1.1);
+    animation-delay: 3000ms;
+}
+
 .resultado{
     width: 80%;
     display: none;
@@ -157,7 +178,7 @@ body{
 .botonesFinales{
     width: 110%;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
 }
@@ -191,8 +212,7 @@ body{
 
 .llaveCopiar{
     padding: 10px;
-    border-radius: 20px;
-    
+    border-radius: 20px;    
     cursor: pointer;
     width: 140px;
 }

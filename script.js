@@ -2,6 +2,7 @@ const textArea = document.querySelector(".textoIngresado");
 const resultado = document.querySelector(".textoEntregado");
 const areaResultado = document.querySelector(".resultado");
 const copia = document.querySelector(".copiar");
+const boton = document.getElementById("btnMostrarOcultar");
 
 const encriptador = generarEncriptador();
 const caracteresReemplazo = Object.values(encriptador);
@@ -84,8 +85,24 @@ var textoEncriptar = '';
     const textoDesencriptado = desencriptarTexto(textoResuelto, llaveDesencriptar);
     resultado.value = textoDesencriptado;
     textArea.value = "";
-  
+    areaResultado.style.display = "flex"
+
   }
   
  
-  
+  function copiar(){
+    resultado.select();
+    navigator.clipboard.writeText(resultado.value)
+    resultado.value = "";
+    alert("Texto Copiado")
+  }
+
+  function mostrarOcultar(){
+    if (areaResultado.style.display == "none"){
+      areaResultado.style.display = "flex";
+      boton.textContent = "▲";
+    }else{
+      areaResultado.style.display = "none";
+      boton.textContent = "▼";
+    }
+  }
