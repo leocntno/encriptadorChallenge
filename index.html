@@ -16,26 +16,31 @@
         <h1 class="bannerTitulo">ENIGMA</h1>
     </header>
     <main class="container">
-        <section class="ingresar">
-            <textarea class="textoIngresado" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
-            <div class="llave">
-                <img class="admiracion" src = "/img/exclamation.svg" alt="admiracion"/>
-                <input type="password" class="llaveCasilla" placeholder="Ingresa o copia la llave">
-            </div>
-            <div class="botones">
-                <button class="btnEncriptar" onclick="btnEncriptar()">Encriptar</button>
-                <button class="btnDesencriptar" onclick="btnDesencriptar()">Desencriptar</button>
-            </div>
-            <div class="mostrar">
-                <button id="btnMostrarOcultar" onclick="mostrarOcultar()">▼</button>
-            </div>
-        </section>
-        <section class="resultado">
-            <textarea class="textoEntregado" cols="30" rows="10"></textarea>
-            <div class="botonesFinales">
-                <button class="copiar" onclick="copiar()">Copiar</button>
-                <button class="obtener" onclick="guardarLlave()">Obtener llave</button>
-            </div>
+        <div class="cajas">
+            <section class="ingresar">
+                <textarea class="textoIngresado" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
+                <div class="llave">
+                    <img class="admiracion" src = "/img/exclamation.svg" alt="admiracion"/>
+                    <input type="password" class="llaveCasilla" placeholder="Ingresa o copia la llave">
+                </div>
+                <div class="botones">
+                    <button class="btnEncriptar" onclick="btnEncriptar()">Encriptar</button>
+                    <button class="btnDesencriptar" onclick="btnDesencriptar()">Desencriptar</button>
+                </div>
+                <div class="mostrar">
+                    <button id="btnMostrarOcultar" onclick="mostrarOcultar()">▼</button>
+                </div>
+            </section>
+            <section class="resultado">
+                <textarea class="textoEntregado" cols="30" rows="10"></textarea>
+                <div class="botonesFinales">
+                    <button class="copiar" onclick="copiar()">Copiar</button>
+                    <button class="obtener" onclick="guardarLlave()">Obtener llave</button>
+                </div>
+            </section>
+        </div>
+        <section class="bannerVertical">
+            <img class="imgVertical" src="/img/bannerVertical.jpg">
         </section>
     </main>
     <footer class="footer">
